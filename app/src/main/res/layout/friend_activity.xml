@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <!-- 상단 노란색 배경 들어가는 레이아웃-->
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#f9e254">
+        <!-- 뒤로가기 버튼-->
+        <ImageView
+            android:id="@+id/btBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bt_back" />
+    </LinearLayout>
+
+    <!-- 친구 프로필 사진-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivProfilePicture"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/profile_momo"/>
+
+    <!-- 친구 이름-->
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:text="이름"/>
+
+    <!-- 폰 번호-->
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:textSize="15dp"
+        android:text="123456"/>
+
+    <!-- 채팅 통화버튼 있는 레이아웃-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp">
+        <!-- 채팅 버튼-->
+        <ImageView
+            android:id="@+id/btChatting"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:background="@drawable/iv_chatting"
+            android:layout_marginRight="30dp"
+            android:visibility="gone"/>
+        <!-- 통화 버튼-->
+        <ImageView
+            android:id="@+id/btCall"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:background="@drawable/iv_tel"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/btAddFriend"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:background="@drawable/iv_addfriend"
+            android:visibility="visible"/>
+    </LinearLayout>
+</LinearLayout>

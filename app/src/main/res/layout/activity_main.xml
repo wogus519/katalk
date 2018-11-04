@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- 화면 맨위 친구 몇명, 친구찾기버튼 설정버튼있는곳-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#493335">
+
+            <!-- 기본화면 맨위 친구 x명 할때 친구를 출력 -->
+            <TextView
+                android:id="@+id/tvCategoryName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignBaseline="@+id/tvFriendNumber"
+                android:layout_alignBottom="@+id/tvFriendNumber"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="친구"
+                android:textColor="#ffffff"
+                android:textSize="18dp" />
+
+            <!-- 기본화면 맨위 친구 x명 할때 x를 출력 -->
+            <TextView
+                android:id="@+id/tvFriendNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tvCategoryName"
+                android:gravity="center_vertical"
+                android:text="20"
+                android:textColor="#f4eb03"
+                android:textSize="20dp" />
+
+            <!-- 기본화면 맨위 오른쪽부근 친구검색이미지 돋보기모양 아이콘 -->
+            <ImageView
+                android:id="@+id/ivFriendSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_toLeftOf="@+id/ivSetting"
+                android:src="@drawable/bt_search" />
+
+            <!-- 기본화면 맨위 맨오른쪽 설정이미지 점3개 아이콘 -->
+            <ImageView
+                android:id="@+id/ivSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/bt_sort" />
+
+        </RelativeLayout>
+
+        <!-- 카테고리 레이아웃, 친구목록,채팅목록,뉴스,설정등등-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#f2f2f4">
+
+            <!-- 친구목록 카테고리이미지-->
+            <ImageView
+                android:id="@+id/ivFriendCategory"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:src="@drawable/bt_friend_select"/>
+
+            <!-- 채팅목록 카테고리이미지-->
+            <ImageView
+                android:id="@+id/ivChattingCategory"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:src="@drawable/bt_chat"/>
+
+            <!-- 뉴스목록 카테고리이미지-->
+            <ImageView
+                android:id="@+id/ivNewsCategory"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:src="@drawable/bt_news"/>
+
+            <!-- 설정목록 카테고리이미지-->
+            <ImageView
+                android:id="@+id/ivSettingCategory"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:src="@drawable/bt_set"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#dedee4">
+            <TextView
+                android:id="@+id/tvSelectLine"
+                android:layout_width="20dp"
+                android:layout_height="2dp"
+                android:background="#403738"/>
+        </RelativeLayout>
+        <!-- 중앙 몸통부분. 친구목록 채팅목록 뉴스목록 설정등등이 올수있는 공간-->
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:background="#ffffff">
+            <!-- 친구목록 -->
+            <LinearLayout
+                android:id="@+id/llFriend"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ListView
+                        android:id="@+id/lvFriendList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@null"></ListView>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivInsertFriend"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="right|bottom"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/bt_makefriend" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- 채팅목록이 뜨는 공간 리스트뷰로 바꾸어야함-->
+            <LinearLayout
+                android:id="@+id/llChatting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ListView
+                        android:id="@+id/lvChattingList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@null"></ListView>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivInsertChatting"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="right|bottom"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/bt_makechatting" />
+                </FrameLayout>
+            </LinearLayout>
+            <!-- 뉴스가 뜨는 공간-->
+            <LinearLayout
+                android:id="@+id/llNews"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <!-- 윗부분 검색창부분 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- 검색할거 입력창-->
+                    <EditText
+                        android:id="@+id/etWebSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="9" />
+
+                    <!-- 검색 버튼 돋보기모양-->
+                    <Button
+                        android:id="@+id/btWebSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bt_web_search" />
+                </LinearLayout>
+
+                <!-- 구분선  -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#c2c0c0" />
+
+                <!-- 뉴스가 들어가는 공간 -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:columnCount="2"
+                    android:rowCount="3">
+
+                    <LinearLayout
+                        android:id="@+id/news1"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="160dp"
+                            android:layout_height="115dp"
+                            android:src="@drawable/iv_news1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="국내 최고 몸값.... 운동선수의 몸....GIF"
+                            android:textColor="#000000"
+                            android:textSize="13dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/news2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="160dp"
+                            android:layout_height="115dp"
+                            android:src="@drawable/iv_news2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="선미랑 같이 셀카 찍고 싶은 남팬.gif"
+                            android:textColor="#000000"
+                            android:textSize="13dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/news3"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="160dp"
+                            android:layout_height="115dp"
+                            android:src="@drawable/iv_news3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="싹 다 얼어버린 한국"
+                            android:textColor="#000000"
+                            android:textSize="13dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/news4"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="160dp"
+                            android:layout_height="115dp"
+                            android:src="@drawable/iv_news4" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="앉아서 2억 벌음jpg"
+                            android:textColor="#000000"
+                            android:textSize="13dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/news5"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="160dp"
+                            android:layout_height="115dp"
+                            android:src="@drawable/iv_news5" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="40살 아이돌 키"
+                            android:textColor="#000000"
+                            android:textSize="13dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/news6"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="160dp"
+                            android:layout_height="115dp"
+                            android:src="@drawable/iv_news6" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="소속사 사장으로 성공한 보아 매니저들"
+                            android:textColor="#000000"
+                            android:textSize="13dp" />
+                    </LinearLayout>
+
+                </GridLayout>
+            </LinearLayout>
+            <!-- 설정 공간-->
+            <LinearLayout
+                android:id="@+id/llSetting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <!-- 사용자 사진 이름 아이디 출력-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <!-- 사용자 사진-->
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivUserPicture"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1" />
+
+                    <!-- 사용자 이름 아이디 출력 레이아웃 수직-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <!-- 이름 출력-->
+                        <TextView
+                            android:id="@+id/tvUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000000"
+                            android:textSize="20dp" />
+
+                        <!-- 아이디 출력-->
+                        <TextView
+                            android:id="@+id/tvUserId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                    <!-- 사용자 정보 오른쪽 그림 의미 x-->
+                    <ImageView
+                        android:id="@+id/ivRight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="2"
+                        android:src="@drawable/iv_setting_right" />
+                </LinearLayout>
+
+                <!-- 사용자 정보 밑쪽 그림 의미x-->
+                <ImageView
+                    android:id="@+id/ivBelow"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="5"
+                    android:src="@drawable/iv_setting_below" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rlChattingDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:alpha="0.4"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="#ffffff"
+            android:layout_centerVertical="true">
+            
+            <TextView
+                android:id="@+id/tvMenuBarName"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="8"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="25dp"
+                android:textColor="#b6a31e"
+                android:maxWidth="170dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="박재현"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#e9d122"/>
+            <TextView
+                android:id="@+id/tvMenuBarNameSet"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:text="채팅방 이름 설정"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d4d3cf"/>
+            <TextView
+                android:id="@+id/tvMenuBarEnter"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:text="채팅방 들어가기"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d4d3cf"/>
+            <TextView
+                android:id="@+id/tvMenuBarExit"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:text="채팅방 나가기"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlFriendDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:alpha="0.4"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="#ffffff"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/tvMenuBarName2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="8"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="25dp"
+                android:textColor="#b6a31e"
+                android:maxWidth="170dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="박재현"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#e9d122"/>
+            <TextView
+                android:id="@+id/tvMenuBarChange"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:text="이름 변경"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d4d3cf"/>
+            <TextView
+                android:id="@+id/tvMenuBarDelete"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:text="친구 삭제"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

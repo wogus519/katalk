@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#edeced">
+
+    <!-- 맨위 편집 x명 나가기버튼-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#493335">
+
+        <Button
+            android:id="@+id/btBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bt_back2"/>
+        <!-- 기본화면 맨위 편집 출력 -->
+        <TextView
+            android:layout_toRightOf="@+id/btBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="친구추가"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btFind"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:text="찾기"
+            android:textSize="17dp"
+            android:textColor="#8b7878"
+            android:background="#493335"
+            android:enabled="false"/>
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#d6caca"
+        android:layout_gravity="right"/>
+    <TextView
+        android:id="@+id/tvRecommnedFreind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:text="  추천친구"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#d6caca"
+        android:layout_gravity="right"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvRecommendFriend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d6caca"
+        android:layout_gravity="right"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+       <ImageView
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:layout_gravity="center_vertical"
+           android:src="@drawable/bt_web_search"/>
+        <EditText
+            android:id="@+id/etFindUserId"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:hint="카카오톡 ID 검색"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#d6caca"
+        android:layout_gravity="right"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#edeced"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/rlSearchUser"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:visibility="invisible">
+
+            <!-- 사용자 프로필 사진-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivFriendPciture"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/profile"/>
+            <!-- 사용자 이름-->
+            <TextView
+                android:id="@+id/tvFriendName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="박재현"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ivFriendPciture"/>
+
+            <Button
+                android:id="@+id/btInsertFriend"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/iv_insertfriend"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ivNoUser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/iv_no_user"
+            android:visibility="invisible"/>
+
+        <LinearLayout
+            android:id="@+id/llExplain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="아이디로 검색해서 편리하게 친구를 추가할 수 있어요."
+                android:textSize="13dp"
+                android:textColor="#9e8e8e"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="내 아이디"
+                    android:textSize="11dp"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="5dp"
+                    android:background="#dcd7dc"/>
+                <TextView
+                    android:id="@+id/tvLoginUserId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="wogus519"
+                    android:textSize="13dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#45a5b1"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

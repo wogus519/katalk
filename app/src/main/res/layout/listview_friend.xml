@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!-- 문자 "내 프로필" 출력-->
+    <TextView
+        android:id="@+id/tvMyProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="내 프로필"
+        android:textSize="10dp"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone" />
+
+    <!-- 중단선-->
+    <TextView
+        android:id="@+id/tvLine1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e4e1e1"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/rlUserInfo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground">
+
+        <!-- 사용자 프로필 사진-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivFriendPciture"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/profile"/>
+        <!-- 사용자 이름-->
+        <TextView
+            android:id="@+id/tvFriendName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="박재현"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/ivFriendPciture"/>
+
+        <!-- 사용자 상태메세지-->
+        <TextView
+            android:id="@+id/tvFriendStateMessage"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="이 걸 또 하고 있다니 ㅂㄷㅂㄷ 시  발"
+            android:textSize="10dp"
+            android:layout_centerVertical="true"
+            android:textColor="#6e6262"
+            android:background="#efefef"/>
+    </RelativeLayout>
+
+    <!-- 중단선 -->
+    <TextView
+        android:id="@+id/tvLine2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e4e1e1"
+        android:visibility="gone"/>
+
+    <!-- 문자 "친구" 출력-->
+    <TextView
+        android:id="@+id/tvFriend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="친구"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+    <!-- 중단선 -->
+    <TextView
+        android:id="@+id/tvLine3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e4e1e1"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvLine4"
+        android:layout_width="311dp"
+        android:layout_height="0.5dp"
+        android:background="#d6caca"
+        android:layout_gravity="right"/>
+</LinearLayout>

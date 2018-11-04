@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Activity.ChattingRoomActivity">
+        <!-- 채팅창 맨위의 뒤로가기 버튼과 상대방 이름뜨는 레이아웃-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#f9e254">
+
+            <!-- 뒤로가기 버튼-->
+            <ImageView
+                android:id="@+id/btBack"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/bt_back"/>
+            <!-- 채팅팅방 이름-->
+            <TextView
+                android:id="@+id/tvChattingRoomName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="상대방이름"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@+id/btBack"
+                android:textColor="#000000"/>
+
+            <ImageView
+                android:id="@+id/ivSetChattingRoom"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/setchattingroom"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        <!-- 채팅 메세지-->
+            <ListView
+                android:id="@+id/lvMesaageList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#9bbbd4"
+                android:divider="@null">
+            </ListView>
+            <RelativeLayout
+                android:id="@+id/rlSelectEmoticon"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="true"
+                android:visibility="gone">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#000000"
+                    android:alpha="0.45"></LinearLayout>
+                <ImageView
+                    android:id="@+id/ivSelectEmoticon"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/ivEmoticonCancle"/>
+                <ImageView
+                    android:id="@+id/ivEmoticonCancle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/iv_emoticon_cancle"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"/>
+            </RelativeLayout>
+        </RelativeLayout>
+        <!-- 채팅치고 전송버튼있는 공간-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="22dp"
+            android:background="#faf8fa">
+
+            <!-- 채팅치는 곳-->
+            <EditText
+                android:id="@+id/etChatting"
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:maxLines="5"
+                android:minLines="2"
+                android:background="#ffffff"/>
+
+            <ImageView
+                android:id="@+id/ivEmoticonShow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/iv_emoticon"/>
+            <!-- 전송 버튼-->
+            <Button
+                android:id="@+id/btSend"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="22dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:text="전송"
+                android:textColor="#000000"
+                android:textSize="10dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_send_border"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llEmoticonCollection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#edeced"
+                android:weightSum="4">
+                <ImageView
+                    android:id="@+id/ivEmoticon1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/anim_emoticon1"/>
+                <ImageView
+                    android:id="@+id/ivEmoticon2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/anim_emoticon2"/>
+                <ImageView
+                    android:id="@+id/ivEmoticon3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/anim_emoticon3"/>
+                <ImageView
+                    android:id="@+id/ivEmoticon4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/anim_emoticon4"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d9d6d9"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:background="#edeced">
+                <ImageView
+                    android:id="@+id/ivEmoticonType1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/iv_emoticon_type1_select"
+                    android:background="#d8d7d8"/>
+                <ImageView
+                    android:id="@+id/ivEmoticonType2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="#edeced"
+                    android:src="@drawable/iv_emoticon_type2"/>
+                <ImageView
+                    android:id="@+id/ivEmoticonType3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="#edeced"
+                    android:src="@drawable/iv_emoticon_type3"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <include
+        layout="@layout/activity_drawer" />
+</android.support.v4.widget.DrawerLayout>

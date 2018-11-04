@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:background="#9bbbd4">
+
+    <LinearLayout
+        android:id="@+id/llMesaageDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:layout_weight="9"
+            android:background="#beaaaa"
+            android:layout_marginRight="5dp"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:textSize="10dp"
+            android:layout_weight="8"
+            android:text="2018년 2월 27일 화요일"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:layout_weight="9"
+            android:background="#beaaaa"
+            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMessageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="right">
+
+        <TextView
+            android:id="@+id/tvMessageTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오후 1:26"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="5dp"
+            android:textSize="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="right">
+            <ImageView
+                android:id="@+id/ivEmoticon"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/anim_emoticon1"/>
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ㅇㅇㅇㅇㅇㅇㅇ"
+                android:textSize="13dp"
+                android:textColor="#292525"
+                android:background="#ffeb33"
+                android:paddingRight="3dp"
+                android:paddingLeft="3dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:maxWidth="150dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

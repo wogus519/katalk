@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 맨위 편집 x명 나가기버튼-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#493335">
+
+        <!-- 기본화면 맨위 편집 출력 -->
+        <TextView
+            android:id="@+id/tvEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="편집"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+
+        <!-- 기본화면 맨위 편집 x명 할때 x를 출력 -->
+        <TextView
+            android:id="@+id/tvSelectNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/tvEdit"
+            android:gravity="center_vertical"
+            android:text="0"
+            android:textColor="#e6de11"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:text="나가기"
+            android:textSize="17dp"
+            android:textColor="#b3a0a0"
+            android:background="#493335"
+            android:enabled="false"/>
+
+    </RelativeLayout>
+
+    <!-- 카테고리 레이아웃, 친구목록,채팅목록,뉴스,설정등등-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#f2f2f4"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전체 선택"
+            android:textSize="20dp"
+            android:textColor="#453e3e"
+            android:layout_marginLeft="10dp"/>
+        <CheckBox
+            android:id="@+id/cbAllSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+     </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lvEditChattingList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null">
+
+    </ListView>
+
+</LinearLayout>

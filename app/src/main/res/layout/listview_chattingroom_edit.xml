@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="8dp">
+
+    <!-- 채팅상대 프로필 사진-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivChattingRoomPicture"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/profile"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/ivChattingRoomPicture">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!-- 채팅상대 이름-->
+            <TextView
+                android:id="@+id/tvChattingRoomName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="박재현"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:maxWidth="170dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:layout_marginLeft="15dp"/>
+            <TextView
+                android:id="@+id/tvUserNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textSize="12dp"
+                android:layout_marginLeft="5dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:background="#e1e0e0"/>
+
+        </LinearLayout>
+
+        <!-- 마지막 채팅 메세지-->
+        <TextView
+            android:id="@+id/tvLastMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오심 술먹죠"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"/>
+    </LinearLayout>
+    <!-- 사용자 상태메세지-->
+    <CheckBox
+        android:id="@+id/cbIsDelete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"/>
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="298dp"
+        android:layout_height="0.5dp"
+        android:background="#d6caca"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ivChattingRoomPicture"/>
+</RelativeLayout>

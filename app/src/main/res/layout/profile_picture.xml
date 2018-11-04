@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 맨위 뒤로가기버튼 , 프로필사진변경하기 나오는 공간-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#f9e254">
+
+        <!-- 뒤로가기 버튼-->
+        <Button
+            android:id="@+id/btBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bt_back" />
+
+        <!-- 프로필사진변경하기 문자열-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="프로필 사진 변경하기"
+            android:layout_marginLeft="90dp"
+            android:gravity="center_vertical"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+
+    <!-- 내 프로필 사진-->
+    <ImageView
+        android:id="@+id/ivProfilePicture"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_weight="13"
+        android:layout_gravity="center"/>
+
+    <!-- 사진촬영 버튼-->
+    <Button
+        android:id="@+id/btPhoto"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="사진촬영"
+        android:background="#ffeb33"/>
+
+    <!-- 앨범에서 사진선택 버튼-->
+    <Button
+        android:id="@+id/btAlbum"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="앨범에서 사진 선택"
+        android:background="#ffeb33"/>
+</LinearLayout>

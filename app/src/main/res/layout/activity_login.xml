@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffeb33"
+    android:gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/iv_talk"
+        android:layout_marginTop="100dp"/>
+    <EditText
+        android:id="@+id/etLoginId"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:hint=" 아이디"
+        android:background="@drawable/login_id_border"/>
+    <TextView
+        android:layout_width="280dp"
+        android:layout_height="0.1dp"
+        android:background="#e4dcdc"/>
+
+    <EditText
+        android:id="@+id/etLoginPassword"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:background="@drawable/login_password_border"
+        android:hint=" 비밀번호"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/tvLoginCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#e42020"
+        android:paddingLeft="1dp"
+        android:textSize="10dp"
+        android:text="아이디 혹은 비밀번호가 잘못되었습니다.
+        \n다시 한번 확인하여 주세요."
+        android:layout_marginBottom="5dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bt_login_border"
+        android:layout_marginTop="10dp"
+        android:text="로그인"
+        android:enabled="false"
+        android:textColor="#8e7974"/>
+    <Button
+        android:id="@+id/btMemberJoin"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="60dp"
+        android:text="회원가입"
+        android:textColor="#353131"
+        android:textSize="13dp"
+        android:background="@drawable/bt_find_id"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:text="아이디/비밀번호 찾기"
+        android:textColor="#353131"
+        android:textSize="13dp"
+        android:background="@drawable/bt_find_id"/>
+</LinearLayout>

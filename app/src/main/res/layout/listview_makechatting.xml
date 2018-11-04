@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <!-- 사용자 프로필 사진-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivFriendPciture"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/profile"/>
+        <!-- 사용자 이름-->
+        <TextView
+            android:id="@+id/tvFriendName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="박재현"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/ivFriendPciture"/>
+
+        <!-- 사용자 상태메세지-->
+        <CheckBox
+            android:id="@+id/CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/custom_check_box"
+            android:button="@null"
+            android:layout_marginEnd="11dp"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tvLine4"
+        android:layout_width="311dp"
+        android:layout_height="0.5dp"
+        android:background="#d6caca"
+        android:layout_gravity="right"/>
+</LinearLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f1eef1">
+
+    <!-- 맨위 편집 x명 나가기버튼-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#493335">
+
+        <Button
+            android:id="@+id/btBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bt_back2"/>
+        <!-- 기본화면 맨위 편집 출력 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="이름 변경"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="#493335"
+            android:text="확인"
+            android:textColor="#ffffff"
+            android:textSize="17dp" />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#d6caca"
+        android:layout_gravity="right"/>
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="친구의 이름을 입력해주세요."
+        android:textSize="18dp"
+        android:textColor="#493335"
+        android:layout_gravity="center_horizontal"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center_horizontal">
+        <EditText
+            android:id="@+id/etFriendName"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:maxLines="1"
+            android:textSize="15dp"
+            android:paddingLeft="5dp"
+            android:maxLength="15"
+            android:layout_marginTop="20dp"
+            android:background="#fcf9f9"/>
+
+        <TextView
+            android:id="@+id/tvTextNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="18dp"
+            android:layout_below="@+id/etFriendName"
+            android:layout_alignRight="@+id/etFriendName"
+            android:text="0/15"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="친구가 설정한 이름"
+        android:textSize="18dp"
+        android:textColor="#493335"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/tvFriendName"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="박재현"
+        android:textSize="18dp"
+        android:textColor="#a9a6a9"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="5dp"
+        android:background="#eae8ea"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>
